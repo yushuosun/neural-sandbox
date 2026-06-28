@@ -1,6 +1,6 @@
 # Neural Sandbox
 
-**Six interactive AI demos — evolution, optimization, learning, diffusion, and emergence — running entirely in your browser.**
+**Nine interactive AI demos — evolution, optimization, learning, diffusion, chaos, and emergence — running entirely in your browser.**
 
 🔗 **Live:** https://yushuosun.github.io/neural-sandbox/
 
@@ -18,6 +18,9 @@ No frameworks. No build step. No external dependencies. Every demo is a single, 
 | [Diffusion Lab](demos/diffusion/index.html) | A tiny net turns noise into shape — DDPM made visible | Generative Models |
 | [Reaction-Diffusion Studio](demos/reaction-diffusion/index.html) | Paint Gray-Scott Turing patterns in real time | Generative Art |
 | [Boids](demos/boids/index.html) | Three local rules, one flock, no leader | Swarm Intelligence |
+| [Automata Lab](demos/automata/index.html) | Cellular automata — Life, HighLife, Maze, and more | Emergence |
+| [Strange Attractors](demos/attractor/index.html) | Lorenz / Clifford / De Jong chaos, drawn live | Chaos & Dynamics |
+| [RL Playground](demos/rl-gridworld/index.html) | A Q-learning agent learns the shortest path live | Reinforcement Learning |
 
 ---
 
@@ -44,6 +47,18 @@ A Gray-Scott simulation on a grid (typed arrays + ping-pong double buffering, 9-
 ### 🐦 Boids — emergence from three rules
 Separation, alignment, and cohesion over a perception radius, with a spatial-hash grid so 200+ boids stay at 60fps. Toggle a mouse predator, trails, and edge wrap. A textbook case of collective behaviour from purely local interactions.
 *Where it goes:* swarm robotics / drone-formation / crowd-simulation sandbox, or a WebGL particle version for tens of thousands of agents.
+
+### 🔲 Automata Lab — emergence from simple rules
+A double-buffered `Uint8Array` grid steps a configurable `B/S` rule (Life `B3/S23`, HighLife, Maze, Seeds, Replicator…) on a toroidal board, rendered via an offscreen `ImageData` blitted with nearest-neighbour scaling so tens of thousands of cells stay at 60fps. Paint cells, drop a Gosper glider gun, and watch order emerge from a handful of live cells.
+*Where it goes:* a "from discrete to continuous life" teaching series (Langton's Ant, Wireworld, Lenia), a rule-space explorer that scores rules by entropy (novelty search), or a Turing-complete "build logic gates from gliders" tutorial.
+
+### 🌌 Strange Attractors — deterministic chaos
+Iterates 2D maps (Clifford, De Jong) and integrates 3D ODEs (Lorenz, Halvorsen) with RK4, accumulating tens of thousands of points per frame with additive `lighter` blending so dense regions glow; colour follows local velocity. NaN/divergence is clamped back to a safe seed so it never blanks.
+*Where it goes:* a generative-art engine (high-res export, preset gallery), an audio visualizer / dynamic-wallpaper module, or a dynamical-systems teaching tool for sensitivity-to-initial-conditions and Lyapunov exponents.
+
+### 🎯 RL Playground — value spreads, policy emerges
+Tabular Q-learning on a gridworld: `Q(s,a)` in a `Float64Array`, ε-greedy exploration, TD update `Q(s,a) ← Q(s,a) + α·[r + γ·maxₐ′Q(s′,a′) − Q(s,a)]`. The state-value heatmap, greedy-policy arrows, and agent trajectory update live as it learns the shortest path; click to place walls, traps, or move the goal.
+*Where it goes:* a comparison bench for SARSA / Double-Q / Dyna / reward-shaping, or an interactive RL-course component that makes Bellman updates visible.
 
 ---
 
