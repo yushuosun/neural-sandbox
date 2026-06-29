@@ -1,6 +1,6 @@
 # Neural Sandbox
 
-**Twelve interactive AI demos — evolution, optimization, learning, diffusion, chaos, emergence, and more — running entirely in your browser.**
+**Fifteen interactive AI demos — evolution, optimization, learning, diffusion, chaos, emergence, search, and more — running entirely in your browser.**
 
 🔗 **Live:** https://yushuosun.github.io/neural-sandbox/
 
@@ -24,6 +24,9 @@ No frameworks. No build step. No external dependencies. Every demo is a single, 
 | [K-Means Lab](demos/kmeans/index.html) | Scatter points, drop centroids, watch clusters form | Interactive ML |
 | [Wave Function Collapse](demos/wave-collapse/index.html) | Coherent patterns from constraint propagation | Procedural Generation |
 | [Fourier Epicycles](demos/fourier/index.html) | Any closed path as a sum of spinning circles | Signals & Math |
+| [Slime Mold](demos/slime-mold/index.html) | Physarum agents grow a living network (stigmergy) | Artificial Life |
+| [Genetic TSP](demos/genetic-tsp/index.html) | A genetic algorithm untangles the salesman route | Evolutionary Optimization |
+| [Pathfinding Visualizer](demos/pathfinding/index.html) | A* / Dijkstra / BFS / Greedy race across a grid | Search Algorithms |
 
 ---
 
@@ -74,6 +77,18 @@ Each cell starts as a superposition of all tiles; the solver repeatedly observes
 ### 〰️ Fourier Epicycles — a path is a sum of circles
 Draw a closed curve (or pick a preset); a from-scratch DFT turns it into a chain of rotating circles (frequency = speed, amplitude = radius, phase = start), tip-to-tail, whose pen tip redraws the original exactly.
 *Where it goes:* a frequency-spectrum sidebar, SVG/signature import, low/high-pass filtering (the JPEG/MP3 idea), or an FFT upgrade for thousands of points.
+
+### 🦠 Slime Mold — stigmergy in action
+Thousands of minimal agents each sense a shared trail field at three forward sensors, steer toward the strongest scent, move, and deposit more trail; the field diffuses and decays each frame. Out of pure local deposit-attract-decay feedback, a Physarum-like foraging network self-organizes — no central control.
+*Where it goes:* food-source attractors (the maze-solving / Tokyo-rail experiments), multi-species competition, or a WebGL/WebGPU port for millions of agents.
+
+### 🧬 Genetic TSP — evolution untangles the route
+Each individual is a full tour (a permutation); fitness is `1 / length`. Tournament selection, ordered crossover (OX), swap/reversal mutation, and elitism evolve a tangled random route into a near-optimal loop, with a live best-distance convergence curve.
+*Where it goes:* 2-opt/Lin-Kernighan hybrids, island models, TSPLIB import, or VRP/time-window variants.
+
+### 🧭 Pathfinding Visualizer — search, side by side
+A*, Dijkstra, BFS, and Greedy Best-First all expand from the start; the difference is *who expands next*. Watch visited cells, the frontier, and the reconstructed shortest path, with manhattan/euclidean (octile for diagonals) heuristics, wall drawing, and maze generation — and compare how much each algorithm explores.
+*Where it goes:* weighted terrain, Jump Point Search / D* Lite, bidirectional search, or real road-network navigation.
 
 ---
 
