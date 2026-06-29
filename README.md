@@ -1,6 +1,6 @@
 # Neural Sandbox
 
-**Nine interactive AI demos — evolution, optimization, learning, diffusion, chaos, and emergence — running entirely in your browser.**
+**Twelve interactive AI demos — evolution, optimization, learning, diffusion, chaos, emergence, and more — running entirely in your browser.**
 
 🔗 **Live:** https://yushuosun.github.io/neural-sandbox/
 
@@ -21,6 +21,9 @@ No frameworks. No build step. No external dependencies. Every demo is a single, 
 | [Automata Lab](demos/automata/index.html) | Cellular automata — Life, HighLife, Maze, and more | Emergence |
 | [Strange Attractors](demos/attractor/index.html) | Lorenz / Clifford / De Jong chaos, drawn live | Chaos & Dynamics |
 | [RL Playground](demos/rl-gridworld/index.html) | A Q-learning agent learns the shortest path live | Reinforcement Learning |
+| [K-Means Lab](demos/kmeans/index.html) | Scatter points, drop centroids, watch clusters form | Interactive ML |
+| [Wave Function Collapse](demos/wave-collapse/index.html) | Coherent patterns from constraint propagation | Procedural Generation |
+| [Fourier Epicycles](demos/fourier/index.html) | Any closed path as a sum of spinning circles | Signals & Math |
 
 ---
 
@@ -59,6 +62,18 @@ Iterates 2D maps (Clifford, De Jong) and integrates 3D ODEs (Lorenz, Halvorsen) 
 ### 🎯 RL Playground — value spreads, policy emerges
 Tabular Q-learning on a gridworld: `Q(s,a)` in a `Float64Array`, ε-greedy exploration, TD update `Q(s,a) ← Q(s,a) + α·[r + γ·maxₐ′Q(s′,a′) − Q(s,a)]`. The state-value heatmap, greedy-policy arrows, and agent trajectory update live as it learns the shortest path; click to place walls, traps, or move the goal.
 *Where it goes:* a comparison bench for SARSA / Double-Q / Dyna / reward-shaping, or an interactive RL-course component that makes Bellman updates visible.
+
+### 🎯 K-Means Lab — clusters crystallize
+Lloyd's algorithm live: scatter points (or generate Gaussian blobs), seed `k` centroids (random or k-means++), then iterate assign → update while a downsampled Voronoi background shows each centroid's territory and `inertia` falls to convergence.
+*Where it goes:* elbow/silhouette curves for choosing `k`, random-vs-k-means++ restart variance, or GMM/DBSCAN comparisons on non-spherical clusters.
+
+### 🌀 Wave Function Collapse — order from constraint
+Each cell starts as a superposition of all tiles; the solver repeatedly observes the lowest-entropy cell, collapses it, and propagates adjacency constraints outward (with restart-on-contradiction). Coherent structure emerges from local rules — a tangible intro to constraint satisfaction.
+*Where it goes:* overlapping-model WFC (learn rules from a sample image), backtracking instead of restart, or game level/texture generation.
+
+### 〰️ Fourier Epicycles — a path is a sum of circles
+Draw a closed curve (or pick a preset); a from-scratch DFT turns it into a chain of rotating circles (frequency = speed, amplitude = radius, phase = start), tip-to-tail, whose pen tip redraws the original exactly.
+*Where it goes:* a frequency-spectrum sidebar, SVG/signature import, low/high-pass filtering (the JPEG/MP3 idea), or an FFT upgrade for thousands of points.
 
 ---
 
